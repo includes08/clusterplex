@@ -5,7 +5,7 @@ services:
         container_name: plex
         build:
             context: ./pms
-            dockerfile: ./extended-image/Dockerfile-development
+            dockerfile: ./extended-image/Dockerfile
         environment:
             VERSION: docker
             PUID: ${PUID}
@@ -61,14 +61,14 @@ services:
     plex-worker:
         build:
             context: ./worker
-            dockerfile: ./extended-image/Dockerfile-development
+            dockerfile: ./extended-image/Dockerfile
         deploy:
             mode: replicated
             replicas: 1
         environment:
             VERSION: docker
-            PUID: 1000
-            PGID: 1000
+            PUID: ${PUID}
+            PGID: ${PGID}
             TZ: ${TZ}
             LISTENING_PORT: 3501 # used by the healthcheck
             STAT_CPU_INTERVAL: 2000 # interval for reporting worker load metrics
