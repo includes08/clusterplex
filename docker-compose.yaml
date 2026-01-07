@@ -25,10 +25,10 @@ services:
             retries: 5
             start_period: 30s
         volumes:
-            - plex-config:/config
-            - transcode-volume:/transcode
-            - ./sample-content/tv:/data/tv
-            - ./sample-content/movies:/data/movies
+            - /mnt/hostshare/container-data/plex/config:/config
+            - /mnt/milkyway/media/transcode:/transcode
+            - /mnt/milkyway/media/tvshows:/data/tv
+            - /mnt/milkyway/media/movies:/data/movies
         ports:
             - 32499:32499 # LOCAL_RELAY_PORT
             - 32400:32400
@@ -81,11 +81,7 @@ services:
             retries: 5
             start_period: 240s
         volumes:
-            - codecs:/codecs
-            - ./sample-content/tv:/data/tv
-            - ./sample-content/movies:/data/movies
-            - transcode-volume:/transcode
-volumes:
-    plex-config:
-    transcode-volume:
-    codecs:
+            - /mnt/hostshare/container-data/plex/codecs:/codecs
+            - /mnt/milkyway/media/transcode:/transcode
+            - /mnt/milkyway/media/tvshows:/data/tv
+            - /mnt/milkyway/media/movies:/data/movies
