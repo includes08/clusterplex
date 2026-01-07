@@ -6,6 +6,7 @@ services:
             context: ./pms
             dockerfile: ./extended-image/Dockerfile
         environment:
+            PLEX_CLAIM: claim-zytgbsex1yp1ZyRxUV_B
             VERSION: docker
             PUID: ${PUID}
             PGID: ${PGID}
