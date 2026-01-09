@@ -27,7 +27,7 @@ services:
             start_period: 30s
         volumes:
             - /mnt/hostshare/container-data/plex/config:/config
-            - /mnt/milkyway/media/transcode:/transcode
+            - /mnt/hostshare/container-data/plex/transcode:/transcode
             - /mnt/milkyway/media/tvshows:/data/tv
             - /mnt/milkyway/media/movies:/data/movies
         ports:
