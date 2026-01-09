@@ -12,7 +12,7 @@ services:
             PUID: ${PUID}
             PGID: ${PGID}
             TZ: ${TZ}
-            ORCHESTRATOR_URL: http://plex-orchestrator:3500
+            ORCHESTRATOR_URL: http://plex-orchestrator.dev.dckr.it
             PMS_SERVICE: plex # This service. If you disable Local Relay then you must use PMS_IP instead
             PMS_PORT: "32400"
             TRANSCODE_OPERATING_MODE: both #(local|remote|both)
