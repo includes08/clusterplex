@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
     plex:
+        hostname: plex
         build:
             context: ./pms
             dockerfile: ./extended-image/Dockerfile
@@ -41,6 +42,7 @@ services:
             - 32414:32414/udp
 
     plex-orchestrator:
+        hostname: plex-orchestrator
         build: ./orchestrator
         healthcheck:
             test: curl -fsS http://localhost:3500/health > /dev/null || exit 1
