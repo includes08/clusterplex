@@ -65,7 +65,7 @@ services:
             dockerfile: ./extended-image/Dockerfile
         deploy:
             mode: replicated
-            replicas: 2
+            replicas: 3
         environment:
             VERSION: docker
             PUID: ${PUID}
